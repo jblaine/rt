@@ -841,6 +841,16 @@ sub _FormatUser {
         my $self = shift;
         return ("System error"); #loc()
     },
+    AttachmentTruncate => sub {
+        my $self = shift;
+        return ( "[_1] truncated because its size ([_2] bytes) exceeded configured maximum size setting ([_3] bytes).",
+            $self->Data // loc( "Content" ), $self->OldValue, $self->NewValue ); #loc()
+    },
+    AttachmentDrop => sub {
+        my $self = shift;
+        return ( "[_1] dropped because its size ([_2] bytes) exceeded configured maximum size setting ([_3] bytes).",
+            $self->Data // loc( "Content" ), $self->OldValue, $self->NewValue ); #loc()
+    },
     "Forward Transaction" => sub {
         my $self = shift;
         my $recipients = join ", ", map {
