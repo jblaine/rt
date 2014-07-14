@@ -147,7 +147,9 @@ padding-right:0.25em;
 .transaction.message .type { background: #069; }
 .transaction.reminders .type { background: #369; }
 .transaction.other .type { background: #abc; }
-.transaction.error .type { background: #abc; }
+.transaction.error .type { background: #f0ad4e; }
+.transaction.attachment-truncate .type { background: #f0ad4e; }
+.transaction.attachment-drop .type { background: #f0ad4e; }
 
 
 .transaction .message-header-value.verify { font-weight: bold; }
