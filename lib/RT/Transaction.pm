@@ -839,7 +839,12 @@ sub _FormatUser {
     },
     SystemError => sub {
         my $self = shift;
-        return ("System error"); #loc()
+        if ( defined $self->Data && $self->Data ne 'No Subject' ) {
+            return $self->Data;
+        }
+        else {
+            return ("System error"); #loc()
+        }
     },
     AttachmentTruncate => sub {
         my $self = shift;
